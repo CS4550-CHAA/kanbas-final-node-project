@@ -10,11 +10,12 @@ export default function QuestionRoutes(app) {
     app.post("/api/questions", createQuestion);
 
 
-    const findAllQuestions =  async (req, res) => {
-        const questions = await dao.findAllQuestions();
+    const findAllQuestionsForQuiz =  async (req, res) => {
+        const {quizId} = req.params;
+        const questions = await dao.findAllQuestionsForQuiz(quizId);
         res.json(questions);
     }
-    app.get("/api/questions", findAllQuestions);
+    app.get("/api/questions/:quizId", findAllQuestionsForQuiz);
 
     const deleteQuestion = async (req, res) => {
         const {questionId} = req.params;
