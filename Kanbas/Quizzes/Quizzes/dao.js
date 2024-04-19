@@ -4,11 +4,11 @@ export const createQuiz = (quiz) => {
   return model.create(quiz);
 };
 export const findAllQuizzes = () => model.find();
-export const findQuizById = (quizId) => model.findById(quizId);
+export const findQuizById = (quizId) => model.findOne({ id: quizId });
 // export const findQuizByUsername = (username) =>
 //   model.findOne({ username: username });
 // export const findUserByCredentials = (username, password) =>
 //   model.findOne({ username, password });
 export const updateQuiz = (quizId, quiz) =>
-  model.updateOne({ _id: quizId }, { $set: quiz });
-export const deleteQuiz = (quizId) => model.deleteOne({ _id: quizId });
+  model.updateOne({ id: quizId }, { $set: quiz });
+export const deleteQuiz = (quizId) => model.deleteOne({ id: quizId });
