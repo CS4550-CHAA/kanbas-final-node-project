@@ -4,19 +4,23 @@ import Hello from "./Hello.js";
 import Lab5 from "./Lab5.js";
 import CourseRoutes from "./Kanbas/courses/routes.js";
 import ModuleRoutes from "./Kanbas/modules/routes.js";
-import AnswerRoutes from "./Kanbas/Quizzes/Answers/routes.js"
-import cors from "cors";
-import mongoose from "mongoose";
+import AnswerRoutes from "./Kanbas/Quizzes/Answers/routes.js";
 import QuestionRoutes from "./Kanbas/Quizzes/Questions/routes.js";
+import QuizRoutes from "./Kanbas/Quizzes/Quizzes/routes.js";
+import cors from "cors";
 import "dotenv/config";
-import QuizRoutes from "./Quizzes/routes.js";
 
 const app = express();
-app.use(cors());
 const CONNECTION_STRING = process.env.local.DB_CONNECTION_STRING;
-mongoose.connect(CONNECTION_STRING);
+
 app.use(express.json());
-mongoose.connect("mongodb://127.0.0.1:27017/kanbas-project");
+app.use(
+  cors({
+    credentials: true,
+    origin: "http://localhost:3001",
+  })
+);
+mongoose.connect(CONNECTION_STRING); //hardcode this to be connection string to get it to work
 ModuleRoutes(app);
 CourseRoutes(app);
 AnswerRoutes(app);
@@ -24,6 +28,5 @@ QuizRoutes(app);
 QuestionRoutes(app);
 Lab5(app);
 Hello(app);
-
-// another project uses 4000 so I used 4001
-app.listen(process.env.PORT || 4001);
+//if you guys use 4001, change this
+app.listen(process.env.PORT || 4000);
