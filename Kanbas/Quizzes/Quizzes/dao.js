@@ -5,6 +5,8 @@ export const createQuiz = (quiz) => {
 };
 export const findAllQuizzes = () => model.find();
 export const findQuizById = (quizId) => model.findOne({ id: quizId });
+export const findQuizzezByCourse = (courseId) =>
+  model.find({ course: courseId });
 // export const findQuizByUsername = (username) =>
 //   model.findOne({ username: username });
 // export const findUserByCredentials = (username, password) =>
