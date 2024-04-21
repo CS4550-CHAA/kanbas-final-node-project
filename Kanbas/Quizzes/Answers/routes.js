@@ -30,8 +30,8 @@ export default function UserRoutes(app) {
         res.json(status);
       };
     app.post("/api/answers/:questionId", createAnswer);
-    app.get("/api/answers/:questionId", findAllAnswers);
-    app.get("/api/answers/:questionId/:answerId", findAnswerById);
+    app.get("/api/answers/byQuestion/:questionId", findAllAnswers);
+    app.get("/api/answers/:answerId", findAnswerById);
     app.put("/api/answers/:questionId/:answerId", updateAnswer);
     app.delete("/api/answers/:questionId/:answerId", deleteAnswer);
 }

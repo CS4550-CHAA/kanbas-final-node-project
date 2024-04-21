@@ -11,13 +11,13 @@ import cors from "cors";
 import "dotenv/config";
 
 const app = express();
-const CONNECTION_STRING = process.env.local.DB_CONNECTION_STRING;
+const CONNECTION_STRING = "mongodb+srv://mallisivakumarh:X7NK5R9sYFeC8dvb@cluster0.ciunnxw.mongodb.net/kanbas-final";
 
 app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:3001",
+    origin: "http://localhost:3000",
   })
 );
 mongoose.connect(CONNECTION_STRING); //hardcode this to be connection string to get it to work
