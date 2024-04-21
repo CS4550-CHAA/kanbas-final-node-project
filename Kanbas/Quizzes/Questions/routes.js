@@ -14,7 +14,7 @@ export default function QuestionRoutes(app) {
         const questions = await dao.findQuestionById(questionId);
         res.json(questions);
     }
-    app.get("/api/questions/:quizId", findAllQuestionById);
+    app.get("/api/questions/:questionId", findAllQuestionById);
 
 
     const findAllQuestionsForQuiz =  async (req, res) => {
