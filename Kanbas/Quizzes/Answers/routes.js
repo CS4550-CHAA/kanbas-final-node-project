@@ -15,7 +15,6 @@ export default function UserRoutes(app) {
 
     };
     const findAllAnswers = async (req, res) => {
-        console.log('here')
         const answers = await dao.findAllAnswers(req.params.questionId);
         res.json(answers);
       };

@@ -11,7 +11,7 @@ import cors from "cors";
 import "dotenv/config";
 
 const app = express();
-const CONNECTION_STRING = "mongodb+srv://mallisivakumarh:X7NK5R9sYFeC8dvb@cluster0.ciunnxw.mongodb.net/kanbas-final";
+const CONNECTION_STRING = "";
 
 app.use(express.json());
 app.use(
