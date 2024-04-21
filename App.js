@@ -35,7 +35,7 @@ import "dotenv/config";
  
 const app = express();
 import mongoose from "mongoose";
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas';
+const CONNECTION_STRING = "mongodb+srv://mallisivakumarh:X7NK5R9sYFeC8dvb@cluster0.ciunnxw.mongodb.net/kanbas_final";
 mongoose.connect(CONNECTION_STRING);
 //const db = mongoose.connection;
 //db.on('error', console.error.bind(console, 'connection error:'));
