@@ -29,9 +29,9 @@ export default function UserRoutes(app) {
         const status = await dao.updateAnswer(answerId, req.body);
         res.json(status);
       };
-    app.post("/api/answers/:questionId", createAnswer);
+    app.post("/api/answers", createAnswer);
     app.get("/api/answers/byQuestion/:questionId", findAllAnswers);
     app.get("/api/answers/:answerId", findAnswerById);
     app.put("/api/answers/:answerId", updateAnswer);
-    app.delete("/api/answers/:questionId/:answerId", deleteAnswer);
+    app.delete("/api/answers/:answerId", deleteAnswer);
 }
