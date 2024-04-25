@@ -7,9 +7,9 @@ import ModuleRoutes from "./Kanbas/modules/routes.js";
 import AnswerRoutes from "./Kanbas/Quizzes/Answers/routes.js";
 import QuestionRoutes from "./Kanbas/Quizzes/Questions/routes.js";
 import QuizRoutes from "./Kanbas/Quizzes/Quizzes/routes.js";
+import UserRoutes from "./Kanbas/Users/routes.js";
 import cors from "cors";
 import "dotenv/config";
-import UserRoutes from "./Kanbas/Quizzes/Answers/routes.js";
 
 const app = express();
 const CONNECTION_STRING =
@@ -23,12 +23,13 @@ app.use(
   })
 );
 mongoose.connect(CONNECTION_STRING); //hardcode this to be connection string to get it to work
+UserRoutes(app);
 ModuleRoutes(app);
 CourseRoutes(app);
 AnswerRoutes(app);
 QuizRoutes(app);
 QuestionRoutes(app);
-UserRoutes(app);
+
 Lab5(app);
 Hello(app);
 //if you guys use 4001, change this
