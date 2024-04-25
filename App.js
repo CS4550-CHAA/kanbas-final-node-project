@@ -30,7 +30,7 @@ import ModuleRoutes from './Kanbas/Modules/routes.js';
 // import QuestionRoutes from './Kanbas/Questions/routes.js';
 import UserRoutes from './Kanbas/Users/routes.js';
 import cors from "cors";
-import session from "express-session";
+// import session from "express-session";
 import "dotenv/config";
  
 const app = express();
@@ -43,7 +43,7 @@ mongoose.connect(CONNECTION_STRING);
 app.use(
     cors({
       credentials: true,
-      origin: process.env.FRONTEND_URL,
+      origin: "http://localhost:3000",
     })
    );
    const sessionOptions = {
@@ -59,11 +59,11 @@ app.use(
       domain: process.env.HTTP_SERVER_DOMAIN,
     };
   }
-  app.use(session(sessionOptions));
+  // app.use(session(sessionOptions));
   app.use(express.json());
 ModuleRoutes(app);
 CourseRoutes(app);
 Lab5(app);
 Hello(app);
 UserRoutes(app);
-app.listen(process.env.PORT || 4001);
+app.listen(process.env.PORT || 4000);
