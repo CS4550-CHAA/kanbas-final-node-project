@@ -9,9 +9,11 @@ import QuestionRoutes from "./Kanbas/Quizzes/Questions/routes.js";
 import QuizRoutes from "./Kanbas/Quizzes/Quizzes/routes.js";
 import cors from "cors";
 import "dotenv/config";
+import UserRoutes from "./Kanbas/Quizzes/Answers/routes.js";
 
 const app = express();
-const CONNECTION_STRING = "mongodb+srv://mallisivakumarh:X7NK5R9sYFeC8dvb@cluster0.ciunnxw.mongodb.net/kanbas_final";
+const CONNECTION_STRING =
+  "mongodb+srv://mallisivakumarh:X7NK5R9sYFeC8dvb@cluster0.ciunnxw.mongodb.net/kanbas_final";
 
 app.use(express.json());
 app.use(
@@ -26,6 +28,7 @@ CourseRoutes(app);
 AnswerRoutes(app);
 QuizRoutes(app);
 QuestionRoutes(app);
+UserRoutes(app);
 Lab5(app);
 Hello(app);
 //if you guys use 4001, change this
